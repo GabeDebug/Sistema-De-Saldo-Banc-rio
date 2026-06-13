@@ -19,7 +19,7 @@ $resultado = (float) fgets(STDIN);
     echo "Seu saldo da conta é $saldo_atual Reais";
  }
  
- if ($resultado == 2){
+ else if ($resultado == 2){
      echo "Quanto você deseja sacar? ";
      $sacar = (float) fgets(STDIN);
      echo "Parabéns você sacou: $sacar\n";
@@ -32,9 +32,12 @@ $resultado = (float) fgets(STDIN);
     }
  }
  
- if ($resultado == 3){
+ else if ($resultado == 3){
     echo "Digite o Valor que você deseja Depositar: ";
     $depositar = (float) fgets(STDIN);
     echo "Parabéns você depositou $depositar \n";
     echo "seu saldo agora é:" . $saldo_atual + $depositar;
+ }
+ else {
+   echo "Você saiu do programa";
  }
