@@ -15,14 +15,26 @@ print_r("4.  Sair\n");
 
 $resultado = (float) fgets(STDIN);
 
-
-
- if($resultado = 1){
-     global $saldo_atual;
-     print_r("Seu saldo da conta é $saldo_atual Reais");
- } if($resultado = 2){
-     print_r ("Quanto você deseja sacar? ");
+ if ($resultado == 1){
+    echo "Seu saldo da conta é $saldo_atual Reais";
+ }
+ 
+ if ($resultado == 2){
+     echo "Quanto você deseja sacar? ";
      $sacar = (float) fgets(STDIN);
-     print_r("Parabéns você sacou: $sacar\n");
-     print_r("E seu saldo atual é: " . $saldo_atual - $sacar);
- };
+     echo "Parabéns você sacou: $sacar\n";
+
+     if($sacar > $saldo_atual){
+        echo "Não é possivel fazer o saque";
+     }
+     else {
+        echo "E seu saldo atual é: " . $saldo_atual - $sacar; 
+    }
+ }
+ 
+ if ($resultado == 3){
+    echo "Digite o Valor que você deseja Depositar: ";
+    $depositar = (float) fgets(STDIN);
+    echo "Parabéns você depositou $depositar \n";
+    echo "seu saldo agora é:" . $saldo_atual + $depositar;
+ }
